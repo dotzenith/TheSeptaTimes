@@ -34,27 +34,27 @@ def main():
         if (args.origin is not None and args.destination is not None):
             if args.numResults is not None:
                 next_trains = septa.get_next_to_arrive(
-                    args.origin, args.destination, args.numResults)
+                    septa.search_station(args.origin), septa.search_station(args.destination), args.numResults)
                 septa.parse_next_to_arrive(next_trains)
                 hr_next_trains = septa.parse_next_to_arrive(next_trains)
                 for train in hr_next_trains:
                     print(train)
             else:
                 next_trains = septa.get_next_to_arrive(
-                    args.origin, args.destination)
+                    septa.search_station(args.origin), septa.search_station(args.destination))
                 hr_next_trains = septa.parse_next_to_arrive(next_trains)
                 for train in hr_next_trains:
                     print(train)
         elif (args.station is not None):
             if args.numResults is not None:
                 trains = septa.get_station_arrivals(
-                    args.station, args.numResults)
+                    septa.search_station(args.station), args.numResults)
                 hr_schedule = septa.parse_station_arrivals(trains)
                 for train in hr_schedule:
                     print(train)
             else:
                 trains = septa.get_station_arrivals(
-                    args.station)
+                    septa.search_station(args.station))
                 hr_schedule = septa.parse_station_arrivals(trains)
                 for train in hr_schedule:
                     print(train)
