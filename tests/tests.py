@@ -1,15 +1,15 @@
 import json
 import requests
-from ..src.SeptaTimes import RegionalSeptaTimes
+from RegionalSeptaTimes.SeptaTimes import RegionalSeptaTimes
 from fuzzywuzzy import process
 from datetime import datetime
 
 station_list = []
 
-septa = SeptaTimes()
+septa = RegionalSeptaTimes()
 
 train_schedule = septa.get_train_schedule(9374)
-hr_schedule = septa.parse_train_schedules(train_schedule)
+hr_schedule = septa.parse_train_schedule(train_schedule)
 
 for i in hr_schedule:
     print(i)

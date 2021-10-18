@@ -1,14 +1,3 @@
-'''
-Packages used so far:
-json
-requests
-fuzzywuzzy
-python-Levenshtein
-sys
-argparse
-datetime
-colorama
-'''
 
 import json
 import requests

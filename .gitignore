@@ -4,3 +4,4 @@ build
 dist
 *.egg*
 __pycache__
+RegionalSeptaTimes.egg-info
