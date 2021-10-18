@@ -1,17 +1,17 @@
-# RegionalSeptaTimes
+# TheSeptaTimes
 
-RegionalSeptaTimes is a python package designed to make accessing info about Septa's regional rail network easier. I made this because I commute to college every day via septa, and checking the time for the next train via the app or the website simply takes too much time. I wanted something I could access from my terminal, and thus, RegionalSeptaTimes was born. 
+TheSeptaTimes is a python package designed to make accessing info about Septa's regional rail network easier. I made this because I commute to college every day via septa, and checking the time for the next train via the app or the website simply takes too much time. I wanted something I could access from my terminal, and thus, TheSeptaTimes was born. 
 
 # Installation
 
 Install from pip
 
 ```bash
-pip install RegionalSeptaTimes
+pip install TheSeptaTimes
 ```
 or install from source
 ```bash
-git clone https://github.com/ZenithDS/RegionalSeptaTimes.git
+git clone https://github.com/ZenithDS/TheSeptaTimes.git
 ```
 
 ```bash
@@ -26,7 +26,7 @@ pip install .
 
 ## As CLI App
 ```
-usage: rst [-h] [-o ORIGIN] [-d DESTINATION] [-s STATION] [-t TRAINID] [-n NUMRESULTS] action
+usage: tst [-h] [-o ORIGIN] [-d DESTINATION] [-s STATION] [-t TRAINID] [-n NUMRESULTS] action
 
 positional arguments:
   action                Determines whether you want to `search` or `list`
@@ -47,33 +47,33 @@ optional arguments:
 
 Search for a train station
 ```
-$ rst search -s admr
+$ tst search -s admr
   
   Station matching your guess: Ardmore
  ```
 
 Get times for the next two trains that go from a given train station to another
 ```
-$ rst list -o '30th Street Station' -d 'North Philadelphia'
+$ tst list -o '30th Street Station' -d 'North Philadelphia'
 ```
 
 List the next 6 arrivals at a given train station
 ```
-$ rst list -s '30th Street Station' -n 6
+$ tst list -s '30th Street Station' -n 6
 ```
 
 Take a look at any given train's schedule using the train number
 ```
-$ rst list -t 9374
+$ tst list -t 9374
 ```
 
 ## As python Library/Package
 
 print the next train going from a given train station to another
 ```python
-from RegionalSeptaTimes.SeptaTimes import RegionalSeptaTimes
+from TheSeptaTimes.SeptaTimes import TheSeptaTimes
 
-septa = RegionalSeptaTimes()
+septa = TheSeptaTimes()
 
 next_trains = septa.get_next_to_arrive('30th Street Station', 'North Philadelphia', 1)
 readable_next_trains = septa.parse_next_to_arrive(next_trains)
@@ -84,9 +84,9 @@ for train in readable_next_trains:
 
 print the next 6 arrivals at a given train station
 ```python
-from RegionalSeptaTimes.SeptaTimes import RegionalSeptaTimes
+from TheSeptaTimes.SeptaTimes import TheSeptaTimes
 
-septa = RegionalSeptaTimes()
+septa = TheSeptaTimes()
 
 trains = septa.get_station_arrivals('30th Street Station', 5)
 readable_trains = septa.parse_station_arrivals(trains)
@@ -97,9 +97,9 @@ for train in readable_trains:
 
 print any given train's schedule using the train number
 ```python
-from RegionalSeptaTimes.SeptaTimes import RegionalSeptaTimes
+from TheSeptaTimes.SeptaTimes import TheSeptaTimes
 
-septa = RegionalSeptaTimes()
+septa = TheSeptaTimes()
 
 train_schedule = septa.get_train_schedule(9374)
 readable_train_schedule = septa.parse_train_schedule(train_schedule)
@@ -109,4 +109,4 @@ for stop in readable_train_schedule:
     
  ```
 # What's New?
-0.0.2 - The search function now processes input related to stations by default 
+0.0.3 - A new name (formerly known as RegionalSeptaTimes) 

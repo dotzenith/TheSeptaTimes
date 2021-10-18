@@ -1,4 +1,4 @@
-from RegionalSeptaTimes.SeptaTimes import RegionalSeptaTimes
+from TheSeptaTimes.SeptaTimes import TheSeptaTimes
 
 station_list = []
 

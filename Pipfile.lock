@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f748deee92cfa7510be238ec48ca7cec16e612b49ed338c000424f1787b095b2"
+            "sha256": "523e8818d05ecb9c836e7f88d3ed243ea8c0336fa69e799535ba2ee413db3f10"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -85,10 +85,6 @@
             ],
             "version": "==2021.3"
         },
-        "regionalseptatimes": {
-            "editable": true,
-            "path": "."
-        },
         "requests": {
             "hashes": [
                 "sha256:6c1246513ecd5ecd4528a0906f910e8f0f9c6b8ec72030dc9fd154dc1a6efd24",
@@ -96,6 +92,10 @@
             ],
             "index": "pypi",
             "version": "==2.26.0"
+        },
+        "theseptatimes": {
+            "editable": true,
+            "path": "."
         },
         "urllib3": {
             "hashes": [

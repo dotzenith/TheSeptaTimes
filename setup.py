@@ -5,18 +5,18 @@ with open("README.md", "r") as lg:
 with open("requirements.txt", "r") as rq:
     dependecies = rq.readlines()
 
-current_version = "0.0.2"
+current_version = "0.0.3"
 
 setuptools.setup(
-    name="RegionalSeptaTimes",
+    name="TheSeptaTimes",
     version=current_version,
     author="Danshu Sharma",
     author_email="contact@danshu.dev",
     description="A Python package to get data about regional trains from the Septa API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/ZenithDS/RegionalSeptaTimes",
-    packages=["RegionalSeptaTimes"],
+    url="https://github.com/ZenithDS/TheSeptaTimes",
+    packages=["TheSeptaTimes"],
     install_requires=dependecies,
     classifiers=[
         "Programming Language :: Python :: 3.9",
@@ -25,7 +25,7 @@ setuptools.setup(
     ],
     entry_points={
         "console_scripts": [
-            "rst = RegionalSeptaTimes.__main__:main"
+            "tst = TheSeptaTimes.__main__:main"
         ]
     }
 )

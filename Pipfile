@@ -10,7 +10,7 @@ python-levenshtein = "*"
 argparse = "*"
 datetime = "*"
 colorama = "*"
-regionalseptatimes = {editable = true, path = "."}
+theseptatimes = {editable = true, path = "."}
 
 [dev-packages]
 pytest = "*"

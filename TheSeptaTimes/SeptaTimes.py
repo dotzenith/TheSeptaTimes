@@ -5,7 +5,7 @@ from datetime import datetime
 from colorama import Fore, Style
 
 
-class RegionalSeptaTimes():
+class TheSeptaTimes():
     def __init__(self):
         self.base_link = "https://www3.septa.org/hackathon/"
         self.stations = [
