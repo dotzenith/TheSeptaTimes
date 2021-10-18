@@ -15,7 +15,7 @@ git clone https://github.com/ZenithDS/TheSeptaTimes.git
 ```
 
 ```bash
-cd RegionalSeptaTimes
+cd TheSeptaTimes
 ```
 
 ```bash
@@ -109,4 +109,4 @@ for stop in readable_train_schedule:
     
  ```
 # What's New?
-0.0.3 - A new name (formerly known as RegionalSeptaTimes) 
+0.0.4 - A new name (formerly known as RegionalSeptaTimes) and correction to some minor mistakes 
