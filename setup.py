@@ -5,7 +5,7 @@ with open("README.md", "r") as lg:
 with open("requirements.txt", "r") as rq:
     dependecies = rq.readlines()
 
-current_version = "0.0.1"
+current_version = "0.0.2"
 
 setuptools.setup(
     name="RegionalSeptaTimes",
