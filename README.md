@@ -108,4 +108,5 @@ for stop in readable_train_schedule:
     print(stop)
     
  ```
-
+# What's New?
+0.0.2 - The search function now processes input related to stations by default 
