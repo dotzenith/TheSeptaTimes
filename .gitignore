@@ -5,3 +5,4 @@ dist
 *.egg*
 __pycache__
 RegionalSeptaTimes.egg-info
+build_and_push.sh

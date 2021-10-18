@@ -1,4 +1,3 @@
-
 import json
 import requests
 from fuzzywuzzy import process
@@ -45,7 +44,7 @@ class RegionalSeptaTimes():
 
     def json_to_py(self, link):
         '''
-        json_to_py(link) -> dictionary or list 
+        json_to_py(link) -> dictionary or list
 
         Makes a request to the given link and returns an object
 
@@ -65,7 +64,7 @@ class RegionalSeptaTimes():
         :param origin -- starting train station
         :param destination -- ending train station
         :param num -- number of trains going from origin to train.
-                      (the default is 2 since that seems to be upper limit for most 
+                      (the default is 2 since that seems to be upper limit for most
                        train stations but results vary depending on the origin and destination)
         '''
         next_to_arrive_link = f'{self.base_link}NextToArrive/{origin}/{destination}/{num}'
@@ -97,7 +96,7 @@ class RegionalSeptaTimes():
 
         builds a url to return the schedule of a specific train based on the train number
 
-        :param train -- the ID of any given train 
+        :param train -- the ID of any given train
         '''
         train_schedule_link = f'{self.base_link}/RRSchedules/{train}'
         train_schedule = self.json_to_py(train_schedule_link)
@@ -110,8 +109,8 @@ class RegionalSeptaTimes():
 
         searches the list of train stations to find one that matches the guessed name
 
-        The official names for train stations vs the api names for train stations differs 
-        here and there. this functions is to help search for the api name of a certain train 
+        The official names for train stations vs the api names for train stations differs
+        here and there. this functions is to help search for the api name of a certain train
         station and also to confirm if the train station you're searching for exists or not
 
         :param guess_name - the station you want to search for
@@ -164,11 +163,11 @@ class RegionalSeptaTimes():
         next_trains_list = []
 
         for train in next_trains:
-            train_info = f"{Fore.MAGENTA}Train #:{Style.RESET_ALL} {train['orig_train']:8}"\
-                f"{Fore.GREEN}Departure Time:{Style.RESET_ALL} {train['orig_departure_time']:10}" \
-                f"{Fore.CYAN}Arrival Time:{Style.RESET_ALL} {train['orig_arrival_time']:10}" \
-                f"{Fore.RED}Delay:{Style.RESET_ALL} {train['orig_delay']:11}" \
-                f"{Fore.YELLOW}Line:{Style.RESET_ALL} {train['orig_line']}"
+            train_info = f"{Fore.MAGENTA}Train #:{Style.RESET_ALL} {train['orig_train']:8}" \
+                         f"{Fore.GREEN}Departure Time:{Style.RESET_ALL} {train['orig_departure_time']:10}" \
+                         f"{Fore.CYAN}Arrival Time:{Style.RESET_ALL} {train['orig_arrival_time']:10}" \
+                         f"{Fore.RED}Delay:{Style.RESET_ALL} {train['orig_delay']:11}" \
+                         f"{Fore.YELLOW}Line:{Style.RESET_ALL} {train['orig_line']}"
             next_trains_list.append(train_info)
 
         return next_trains_list
@@ -177,7 +176,7 @@ class RegionalSeptaTimes():
         '''
         parse_station_arrivals(trains) -> list of strings
 
-        parses the data given by get_station_arrivals() and returns it in a  nice and 
+        parses the data given by get_station_arrivals() and returns it in a  nice and
         colorful format
 
         :param trains -- the list of dictionaries returned by get_station_arrivals()

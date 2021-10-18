@@ -1,18 +1,16 @@
-import json
-import requests
 from RegionalSeptaTimes.SeptaTimes import RegionalSeptaTimes
-from fuzzywuzzy import process
-from datetime import datetime
 
 station_list = []
 
 septa = RegionalSeptaTimes()
 
-train_schedule = septa.get_train_schedule(9374)
-hr_schedule = septa.parse_train_schedule(train_schedule)
+next_trains = septa.get_next_to_arrive(
+    '30th Street Station', 'Cornwells Heights', 1)
 
-for i in hr_schedule:
-    print(i)
+hr_next_trains = septa.parse_next_to_arrive(next_trains)
+
+for train in hr_next_trains:
+    print(train)
 
 '''
 trains = septa.get_station_arrivals('30th Street Station', 5)
