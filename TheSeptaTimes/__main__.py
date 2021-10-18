@@ -59,10 +59,13 @@ def main():
                 for train in hr_schedule:
                     print(train)
         elif (args.trainID is not None):
-            train_schedule = septa.get_train_schedule(9374)
-            hr_train_schedule = septa.parse_train_schedule(train_schedule)
-            for stop in hr_train_schedule:
-                print(stop)
+            train_schedule = septa.get_train_schedule(args.trainID)
+            if "error" in train_schedule:
+                print("No train found with that number")
+            else:
+                hr_train_schedule = septa.parse_train_schedule(train_schedule)
+                for stop in hr_train_schedule:
+                    print(stop)
 
 
 if __name__ == "__main__":

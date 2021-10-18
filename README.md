@@ -109,4 +109,4 @@ for stop in readable_train_schedule:
     
  ```
 # What's New?
-0.0.4 - A new name (formerly known as RegionalSeptaTimes) and correction to some minor mistakes 
+0.0.5 - Fixed an issue with the train ID command 
