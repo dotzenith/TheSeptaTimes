@@ -10,8 +10,8 @@ python-levenshtein = "*"
 argparse = "*"
 datetime = "*"
 colorama = "*"
-theseptatimes = {editable = true, path = "."}
 build = "*"
+theseptatimes = {editable = true, path = "."}
 
 [dev-packages]
 pytest = "*"

@@ -109,4 +109,4 @@ for stop in readable_train_schedule:
     
  ```
 # What's New?
-0.0.5 - Fixed an issue with the train ID command 
+0.0.6 - Now using list comprehension for the parse functions

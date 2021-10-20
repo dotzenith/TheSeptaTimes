@@ -5,7 +5,7 @@ with open("README.md", "r") as lg:
 with open("requirements.txt", "r") as rq:
     dependecies = rq.readlines()
 
-current_version = "0.0.5"
+current_version = "0.0.6"
 
 setuptools.setup(
     name="TheSeptaTimes",

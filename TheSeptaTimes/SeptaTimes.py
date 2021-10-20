@@ -160,15 +160,11 @@ class TheSeptaTimes():
 
         :param next_trains -- the list of dictionaries from get_next_to_arrive()
         '''
-        next_trains_list = []
-
-        for train in next_trains:
-            train_info = f"{Fore.MAGENTA}Train #:{Style.RESET_ALL} {train['orig_train']:8}" \
-                         f"{Fore.GREEN}Departure Time:{Style.RESET_ALL} {train['orig_departure_time']:10}" \
-                         f"{Fore.CYAN}Arrival Time:{Style.RESET_ALL} {train['orig_arrival_time']:10}" \
-                         f"{Fore.RED}Delay:{Style.RESET_ALL} {train['orig_delay']:11}" \
-                         f"{Fore.YELLOW}Line:{Style.RESET_ALL} {train['orig_line']}"
-            next_trains_list.append(train_info)
+        next_trains_list = [f"{Fore.MAGENTA}Train #:{Style.RESET_ALL} {train['orig_train']:8}"
+                            f"{Fore.GREEN}Departure Time:{Style.RESET_ALL} {train['orig_departure_time']:10}"
+                            f"{Fore.CYAN}Arrival Time:{Style.RESET_ALL} {train['orig_arrival_time']:10}"
+                            f"{Fore.RED}Delay:{Style.RESET_ALL} {train['orig_delay']:11}"
+                            f"{Fore.YELLOW}Line:{Style.RESET_ALL} {train['orig_line']}" for train in next_trains]
 
         return next_trains_list
 
@@ -181,35 +177,29 @@ class TheSeptaTimes():
 
         :param trains -- the list of dictionaries returned by get_station_arrivals()
         '''
-        trains_list = []
-
         try:
             north = trains[0]['Northbound']
-            for train in north:
-                train_str = f"{Fore.BLUE}Direction:{Style.RESET_ALL} {train['direction']:5}" \
-                            f"{Fore.CYAN}Train #:{Style.RESET_ALL} {train['train_id']:8}" \
-                            f"{Fore.GREEN}Next Station:{Style.RESET_ALL} {str(train['next_station']):25}" \
-                            f"{Fore.MAGENTA}Time:{Style.RESET_ALL} {self.convert_station_time(train['sched_time']):11}" \
-                            f"{Fore.RED}Status:{Style.RESET_ALL} {train['status']:11}" \
-                            f"{Fore.YELLOW}Destination:{Style.RESET_ALL} {train['destination']}"
-                trains_list.append(train_str)
+            north_trains_list = [f"{Fore.BLUE}Direction:{Style.RESET_ALL} {train['direction']:5}"
+                                 f"{Fore.CYAN}Train #:{Style.RESET_ALL} {train['train_id']:8}"
+                                 f"{Fore.GREEN}Next Station:{Style.RESET_ALL} {str(train['next_station']):25}"
+                                 f"{Fore.MAGENTA}Time:{Style.RESET_ALL} {self.convert_station_time(train['sched_time']):11}"
+                                 f"{Fore.RED}Status:{Style.RESET_ALL} {train['status']:11}"
+                                 f"{Fore.YELLOW}Destination:{Style.RESET_ALL} {train['destination']}" for train in north]
         except TypeError:
-            trains_list.append('No Northbound trains at the time')
+            north_trains_list = ['No Northbound trains at the time']
 
         try:
             south = trains[1]['Southbound']
-            for train in south:
-                train_str = f"{Fore.BLUE}Direction:{Style.RESET_ALL} {train['direction']:5}" \
-                            f"{Fore.CYAN}Train #:{Style.RESET_ALL} {train['train_id']:8}" \
-                            f"{Fore.GREEN}Next Station:{Style.RESET_ALL} {str(train['next_station']):25}" \
-                            f"{Fore.MAGENTA}Time:{Style.RESET_ALL} {self.convert_station_time(train['sched_time']):11}" \
-                            f"{Fore.RED}Status:{Style.RESET_ALL} {train['status']:11}" \
-                            f"{Fore.YELLOW}Destination:{Style.RESET_ALL} {train['destination']}"
-                trains_list.append(train_str)
+            south_trains_list = [f"{Fore.BLUE}Direction:{Style.RESET_ALL} {train['direction']:5}"
+                                 f"{Fore.CYAN}Train #:{Style.RESET_ALL} {train['train_id']:8}"
+                                 f"{Fore.GREEN}Next Station:{Style.RESET_ALL} {str(train['next_station']):25}"
+                                 f"{Fore.MAGENTA}Time:{Style.RESET_ALL} {self.convert_station_time(train['sched_time']):11}"
+                                 f"{Fore.RED}Status:{Style.RESET_ALL} {train['status']:11}"
+                                 f"{Fore.YELLOW}Destination:{Style.RESET_ALL} {train['destination']}" for train in south]
         except TypeError:
-            trains_list.append('No Southbound trains at the time')
+            south_trains_list = ['No Southbound trains at the time']
 
-        return trains_list
+        return (north_trains_list + south_trains_list)
 
     def parse_train_schedule(self, train_schedule):
         '''
@@ -219,12 +209,8 @@ class TheSeptaTimes():
 
         :param train_schedule -- the list of dictionaries returned by get_train_schedule()
         '''
-        train_schedule_list = []
-
-        for stop in train_schedule:
-            stop_info = f"{Fore.YELLOW}Station:{Style.RESET_ALL} {stop['station']:27}" \
-                        f"{Fore.CYAN}Scheduled Time:{Style.RESET_ALL} {stop['sched_tm']:14}" \
-                        f"{Fore.GREEN}Actual Time:{Style.RESET_ALL} {stop['act_tm']}"
-            train_schedule_list.append(stop_info)
+        train_schedule_list = [f"{Fore.YELLOW}Station:{Style.RESET_ALL} {stop['station']:27}"
+                               f"{Fore.CYAN}Scheduled Time:{Style.RESET_ALL} {stop['sched_tm']:14}"
+                               f"{Fore.GREEN}Actual Time:{Style.RESET_ALL} {stop['act_tm']}" for stop in train_schedule]
 
         return train_schedule_list
