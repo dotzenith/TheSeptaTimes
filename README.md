@@ -43,7 +43,7 @@ $ pip install .
 
 ### ❖ Usage
 
-<details open>
+<details>
 <summary><strong>As CLI App</strong></summary>
 
 ```sh
@@ -90,9 +90,7 @@ $ tst list -t 9374
 
 </details>
 
-</br>
-
-<details open>
+<details>
 <summary><strong>As Python Library/Package</strong></summary>
 
 > print the next train going from a given train station to another
@@ -136,8 +134,6 @@ for stop in readable_train_schedule:
  ```
 
 </details>
-
-</br>
 
 ---
 
