@@ -138,7 +138,7 @@ for stop in readable_train_schedule:
 ---
 
 ### ❖ What's New? 
-0.0.6 - Now using list comprehension for the parse functions
+0.0.7 - Improved Formatting for all of the CLI commands
 
 ---
 

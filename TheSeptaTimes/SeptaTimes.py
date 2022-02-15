@@ -160,11 +160,20 @@ class TheSeptaTimes():
 
         :param next_trains -- the list of dictionaries from get_next_to_arrive()
         '''
-        next_trains_list = [f"{Fore.MAGENTA}Train #:{Style.RESET_ALL} {train['orig_train']:8}"
-                            f"{Fore.GREEN}Departure Time:{Style.RESET_ALL} {train['orig_departure_time']:10}"
-                            f"{Fore.CYAN}Arrival Time:{Style.RESET_ALL} {train['orig_arrival_time']:10}"
-                            f"{Fore.RED}Delay:{Style.RESET_ALL} {train['orig_delay']:11}"
-                            f"{Fore.YELLOW}Line:{Style.RESET_ALL} {train['orig_line']}" for train in next_trains]
+        next_trains_list = [f"{train['orig_train']:<11}"
+                            f"{train['orig_departure_time']:<13}"
+                            f"{train['orig_arrival_time']:<11}"
+                            f"{train['orig_delay']:<9}"
+                            f"{train['orig_line']}" for train in next_trains]
+
+        # making the header string and adding it to the beginning of the list
+        header_string = f"{Fore.MAGENTA}{'Train #':<11}{Style.RESET_ALL}" \
+                        f"{Fore.GREEN}{'Departure':<13}{Style.RESET_ALL}" \
+                        f"{Fore.CYAN}{'Arrival':<11}{Style.RESET_ALL}" \
+                        f"{Fore.RED}{'Delay':<9}{Style.RESET_ALL}" \
+                        f"{Fore.YELLOW}{'Line'}{Style.RESET_ALL}"
+      
+        next_trains_list.insert(0, header_string)
 
         return next_trains_list
 
@@ -179,27 +188,38 @@ class TheSeptaTimes():
         '''
         try:
             north = trains[0]['Northbound']
-            north_trains_list = [f"{Fore.BLUE}Direction:{Style.RESET_ALL} {train['direction']:5}"
-                                 f"{Fore.CYAN}Train #:{Style.RESET_ALL} {train['train_id']:8}"
-                                 f"{Fore.GREEN}Next Station:{Style.RESET_ALL} {str(train['next_station']):25}"
-                                 f"{Fore.MAGENTA}Time:{Style.RESET_ALL} {self.convert_station_time(train['sched_time']):11}"
-                                 f"{Fore.RED}Status:{Style.RESET_ALL} {train['status']:11}"
-                                 f"{Fore.YELLOW}Destination:{Style.RESET_ALL} {train['destination']}" for train in north]
+            north_trains_list = [f"{'North':<13}"
+                                 f"{train['train_id']:<11}"
+                                 f"{str(train['next_station']):<27}"
+                                 f"{self.convert_station_time(train['sched_time']):<12}"
+                                 f"{train['status']:<10}"
+                                 f"{train['destination']}" for train in north]
         except TypeError:
             north_trains_list = ['No Northbound trains at the time']
 
         try:
             south = trains[1]['Southbound']
-            south_trains_list = [f"{Fore.BLUE}Direction:{Style.RESET_ALL} {train['direction']:5}"
-                                 f"{Fore.CYAN}Train #:{Style.RESET_ALL} {train['train_id']:8}"
-                                 f"{Fore.GREEN}Next Station:{Style.RESET_ALL} {str(train['next_station']):25}"
-                                 f"{Fore.MAGENTA}Time:{Style.RESET_ALL} {self.convert_station_time(train['sched_time']):11}"
-                                 f"{Fore.RED}Status:{Style.RESET_ALL} {train['status']:11}"
-                                 f"{Fore.YELLOW}Destination:{Style.RESET_ALL} {train['destination']}" for train in south]
+            south_trains_list = [f"{'South':<13}"
+                                 f"{train['train_id']:<11}"
+                                 f"{str(train['next_station']):<27}"
+                                 f"{self.convert_station_time(train['sched_time']):<12}"
+                                 f"{train['status']:<10}"
+                                 f"{train['destination']}" for train in south]
         except TypeError:
             south_trains_list = ['No Southbound trains at the time']
 
-        return (north_trains_list + south_trains_list)
+        # making the header string and adding it to the beginning of the list
+        header_string = f"{Fore.BLUE}{'Direction':<13}{Style.RESET_ALL}" \
+                        f"{Fore.CYAN}{'Train #':<11}{Style.RESET_ALL}" \
+                        f"{Fore.GREEN}{'Next Station':<27}{Style.RESET_ALL}" \
+                        f"{Fore.MAGENTA}{'Time':<12}{Style.RESET_ALL}" \
+                        f"{Fore.RED}{'Status':<10}{Style.RESET_ALL}" \
+                        f"{Fore.YELLOW}{'Destination'}{Style.RESET_ALL}"
+       
+        final_list = (north_trains_list + south_trains_list)
+        final_list.insert(0, header_string)
+
+        return final_list
 
     def parse_train_schedule(self, train_schedule):
         '''
@@ -209,8 +229,15 @@ class TheSeptaTimes():
 
         :param train_schedule -- the list of dictionaries returned by get_train_schedule()
         '''
-        train_schedule_list = [f"{Fore.YELLOW}Station:{Style.RESET_ALL} {stop['station']:27}"
-                               f"{Fore.CYAN}Scheduled Time:{Style.RESET_ALL} {stop['sched_tm']:14}"
-                               f"{Fore.GREEN}Actual Time:{Style.RESET_ALL} {stop['act_tm']}" for stop in train_schedule]
 
+        train_schedule_list = [f"{stop['station']:<27}"
+                               f"{stop['sched_tm']:<18}"
+                               f"{stop['act_tm']}" for stop in train_schedule]
+
+        # making the header string and adding it to the beginning of the list
+        header_string = f"{Fore.YELLOW}{'Station':<27}{Style.RESET_ALL}" \
+                        f"{Fore.CYAN}{'Scheduled Time':<18}{Style.RESET_ALL}" \
+                        f"{Fore.GREEN}{'Actual Time'}{Style.RESET_ALL}"
+       
+        train_schedule_list.insert(0, header_string)
         return train_schedule_list
