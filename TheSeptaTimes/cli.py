@@ -1,10 +1,10 @@
 import sys
-from TheSeptaTimes.SeptaTimes import TheSeptaTimes
+import theseptatimes.SeptaTimes as SeptaTimes
 import argparse
 
 
 def main():
-    septa = TheSeptaTimes()
+    septa = SeptaTimes.TheSeptaTimes()
 
     parser = argparse.ArgumentParser()
     parser.add_argument(

@@ -140,7 +140,7 @@ for stop in readable_train_schedule:
 ---
 
 ### ❖ What's New? 
-0.0.9 - Now using poetry for package management, and a fix to the PyPi readme
+0.0.11 - Now using poetry for package management
 
 ---
 
