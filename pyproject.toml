@@ -1,3 +1,25 @@
+[tool.poetry]
+name = "theseptatimes"
+version = "0.0.9"
+description = "A Python package to get data from the Septa API"
+authors = ["ZenithDS"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+argparse = "^1.4.0"
+requests = "^2.27.1"
+fuzzywuzzy = "^0.18.0"
+colorama = "^0.4.4"
+DateTime = "^4.4"
+python-Levenshtein = "^0.12.2"
+
+[tool.poetry.scripts]
+tst = "TheSeptaTimes.cli:main"
+
+[tool.poetry.dev-dependencies]
+
 [build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta:__legacy__"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -2,7 +2,4 @@
 .DS_Store
 build
 dist
-*.egg*
 __pycache__
-RegionalSeptaTimes.egg-info
-TheSeptaTimes.egg-info

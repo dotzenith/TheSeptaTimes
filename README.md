@@ -33,10 +33,12 @@ $ pip3 install TheSeptaTimes
 ```
 
 > Install from source
+- First, install [poetry](https://python-poetry.org/)
+
 ```sh
 $ git clone https://github.com/ZenithDS/TheSeptaTimes.git
 $ cd TheSeptaTimes
-$ pip install .
+$ poetry install
 ```
 
 ---
@@ -138,7 +140,7 @@ for stop in readable_train_schedule:
 ---
 
 ### ❖ What's New? 
-0.0.7 - Improved Formatting for all of the CLI commands
+0.0.9 - Now using poetry for package management, and a fix to the PyPi readme
 
 ---
 
