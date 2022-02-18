@@ -22,6 +22,8 @@
 
 TheSeptaTimes is a python package designed to make accessing info about Septa's regional rail network easier. I made this because I commute to college every day via septa, and checking the time for the next train via the app or the website simply takes too much time. I wanted something I could access from my terminal, and thus, TheSeptaTimes was born. 
 
+  <img src="assets/septa.gif" alt="septa gif">
+
 ---
 
 ### ❖ Installation
