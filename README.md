@@ -40,7 +40,8 @@ $ pip3 install TheSeptaTimes
 ```sh
 $ git clone https://github.com/ZenithDS/TheSeptaTimes.git
 $ cd TheSeptaTimes
-$ poetry install
+$ poetry build
+$ pip3 install ./dist/theseptatimes-0.0.11.tar.gz
 ```
 
 ---
