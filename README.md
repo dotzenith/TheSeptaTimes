@@ -136,7 +136,7 @@ for stop in readable_train_schedule:
 ---
 
 ### ❖ What's New? 
-0.1.00 - an overhaul to the cli
+0.1.0 - an overhaul to the cli
 
 ---
 
