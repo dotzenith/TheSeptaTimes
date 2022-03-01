@@ -52,23 +52,16 @@ $ pip3 install ./dist/theseptatimes-0.0.11.tar.gz
 <summary><strong>As CLI App</strong></summary>
 
 ```sh
-usage: tst [-h] [-o ORIGIN] [-d DESTINATION] [-s STATION] [-t TRAINID] [-n NUMRESULTS] action
+Usage: tst [OPTIONS] COMMAND [ARGS]...
 
-positional arguments:
-  action                Determines whether you want to `search` or `list`
+Options:
+  --help  Show this message and exit.
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -o ORIGIN, --origin ORIGIN
-                        the starting train station
-  -d DESTINATION, --destination DESTINATION
-                        the ending station
-  -s STATION, --station STATION
-                        any given station
-  -t TRAINID, --trainID TRAINID
-                        the ID of any given train
-  -n NUMRESULTS, --numResults NUMRESULTS
-                        the number of results
+Commands:
+  arrivals  Find the next arrivals at a given train station
+  next      Search for the next train going from an origin to a destination
+  search    Search for a given station
+  train     Track a given train using it's number
 ```
 
 > Search for a train station
