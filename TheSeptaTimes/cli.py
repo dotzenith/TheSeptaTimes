@@ -1,71 +1,61 @@
-import sys
+import typer
 import theseptatimes.SeptaTimes as SeptaTimes
-import argparse
 
+app = typer.Typer(add_completion=False)
+septa = SeptaTimes.TheSeptaTimes()
+
+@app.command()
+def search(
+    station: str
+):
+    """
+    Search for a given station
+    """
+    print(f"Closest matching station to your guess: {septa.search_station(station)}")
+
+@app.command()
+def train(
+    train_num: str
+):
+    """
+    Track a given train using it's number
+    """
+    
+    train_schedule = septa.get_train_schedule(train_num)
+    if "error" in train_schedule:
+        print("No train found with that number")
+    else:
+        hr_train_schedule = septa.parse_train_schedule(train_schedule)
+        for stop in hr_train_schedule:
+            print(stop)
+
+@app.command()
+def next(
+    origin: str,
+    destination: str,
+    num: str = typer.Argument(2, show_default=False)
+):
+    """
+    Search for the next train going from an origin to a destination
+    """
+    next_trains = septa.get_next_to_arrive(
+        septa.search_station(origin), septa.search_station(destination), num)
+    hr_next_trains = septa.parse_next_to_arrive(next_trains)
+    for train in hr_next_trains:
+        print(train)
+
+@app.command()
+def arrivals(
+    station: str,
+    num: str = typer.Argument(5, show_default=False)
+):
+    """
+    Find the next arrivals at a given train station 
+    """
+    trains = septa.get_station_arrivals(septa.search_station(station), num)
+    hr_schedule = septa.parse_station_arrivals(trains)
+    for train in hr_schedule:
+        print(train)
 
 def main():
-    septa = SeptaTimes.TheSeptaTimes()
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "action", help="Determines whether you want to `search` or `list`")
-    parser.add_argument(
-        "-o", "--origin", help="the starting train station")
-    parser.add_argument(
-        "-d", "--destination", help="the ending station")
-    parser.add_argument(
-        "-s", "--station", help="any given station")
-    parser.add_argument(
-        "-t", "--trainID", help="the ID of any given train")
-    parser.add_argument(
-        "-n", "--numResults", help="the number of results"
-    )
-
-    args = parser.parse_args()
-
-    if args.action == "search":
-        if args.station is not None:
-            search_result = f"Station matching your guess: {septa.search_station(args.station)}"
-            print(search_result)
-        else:
-            print("Please enter a valid train station")
-
-    elif args.action == "list":
-        if (args.origin is not None and args.destination is not None):
-            if args.numResults is not None:
-                next_trains = septa.get_next_to_arrive(
-                    septa.search_station(args.origin), septa.search_station(args.destination), args.numResults)
-                hr_next_trains = septa.parse_next_to_arrive(next_trains)
-                for train in hr_next_trains:
-                    print(train)
-            else:
-                next_trains = septa.get_next_to_arrive(
-                    septa.search_station(args.origin), septa.search_station(args.destination))
-                hr_next_trains = septa.parse_next_to_arrive(next_trains)
-                for train in hr_next_trains:
-                    print(train)
-        elif (args.station is not None):
-            if args.numResults is not None:
-                trains = septa.get_station_arrivals(
-                    septa.search_station(args.station), args.numResults)
-                hr_schedule = septa.parse_station_arrivals(trains)
-                for train in hr_schedule:
-                    print(train)
-            else:
-                trains = septa.get_station_arrivals(
-                    septa.search_station(args.station))
-                hr_schedule = septa.parse_station_arrivals(trains)
-                for train in hr_schedule:
-                    print(train)
-        elif (args.trainID is not None):
-            train_schedule = septa.get_train_schedule(args.trainID)
-            if "error" in train_schedule:
-                print("No train found with that number")
-            else:
-                hr_train_schedule = septa.parse_train_schedule(train_schedule)
-                for stop in hr_train_schedule:
-                    print(stop)
-
-
-if __name__ == "__main__":
-    main()
+    app()

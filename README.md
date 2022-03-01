@@ -73,24 +73,24 @@ optional arguments:
 
 > Search for a train station
 ```sh
-$ tst search -s admr
+$ tst search admr
   
   Station matching your guess: Ardmore
  ```
 
 > Get times for the next two trains that go from a given train station to another
 ```sh
-$ tst list -o '30th Street Station' -d 'North Philadelphia'
+$ tst next '30th Street Station' 'North Philadelphia'
 ```
 
 > List the next 6 arrivals at a given train station
 ```sh
-$ tst list -s '30th Street Station' -n 6
+$ tst arrivals '30th Street Station' 6
 ```
 
 > Take a look at any given train's schedule using the train number
 ```sh
-$ tst list -t 9374
+$ tst train 9374
 ```
 
 </details>
@@ -143,7 +143,7 @@ for stop in readable_train_schedule:
 ---
 
 ### ❖ What's New? 
-0.0.11 - Now using poetry for package management
+0.1.00 - an overhaul to the cli interface
 
 ---
 
