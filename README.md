@@ -114,7 +114,7 @@ trains = septa.get_station_arrivals('30th Street Station', 5)
 readable_trains = septa.parse_station_arrivals(trains)
 
 for train in readable_trains:
-    print(trains)
+    print(train)
 ```
 
 > print any given train's schedule using the train number
