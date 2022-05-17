@@ -31,17 +31,17 @@ TheSeptaTimes is a python package designed to make accessing info about Septa's 
 > Install from pip
 
 ```sh
-$ pip3 install TheSeptaTimes
+pip3 install TheSeptaTimes
 ```
 
 > Install from source
 - First, install [poetry](https://python-poetry.org/)
 
 ```sh
-$ git clone https://github.com/ZenithDS/TheSeptaTimes.git
-$ cd TheSeptaTimes
-$ poetry build
-$ pip3 install ./dist/theseptatimes-0.1.0.tar.gz
+git clone https://github.com/ZenithDS/TheSeptaTimes.git
+cd TheSeptaTimes
+poetry build
+pip3 install ./dist/theseptatimes-0.1.0.tar.gz
 ```
 
 ---
@@ -64,26 +64,24 @@ Commands:
   train     Track a given train using it's number
 ```
 
-> Search for a train station
+> Fuzzy search for a train station
 ```sh
-$ tst search admr
-  
-  Station matching your guess: Ardmore
- ```
+tst search admr
+```
 
 > Get times for the next two trains that go from a given train station to another
 ```sh
-$ tst next '30th Street Station' 'North Philadelphia'
+tst next '30th Street Station' 'North Philadelphia'
 ```
 
 > List the next 6 arrivals at a given train station
 ```sh
-$ tst arrivals '30th Street Station' 6
+tst arrivals '30th Street Station' 6
 ```
 
 > Take a look at any given train's schedule using the train number
 ```sh
-$ tst train 9374
+tst train 9374
 ```
 
 </details>
