@@ -4,13 +4,13 @@
 <div align="center">
    <p></p>
    
-   <img src="https://img.shields.io/github/stars/zenithds/TheSeptaTimes?color=F8BD96&labelColor=302D41&style=for-the-badge">   
+   <img src="https://img.shields.io/github/stars/dotzenith/TheSeptaTimes?color=F8BD96&labelColor=302D41&style=for-the-badge">   
 
-   <img src="https://img.shields.io/github/forks/zenithds/TheSeptaTimes?color=DDB6F2&labelColor=302D41&style=for-the-badge">   
+   <img src="https://img.shields.io/github/forks/dotzenith/TheSeptaTimes?color=DDB6F2&labelColor=302D41&style=for-the-badge">   
 
-   <img src="https://img.shields.io/github/repo-size/zenithds/TheSeptaTimes?color=ABE9B3&labelColor=302D41&style=for-the-badge">
+   <img src="https://img.shields.io/github/repo-size/dotzenith/TheSeptaTimes?color=ABE9B3&labelColor=302D41&style=for-the-badge">
    
-   <img src="https://badges.pufler.dev/visits/zenithds/TheSeptaTimes?style=for-the-badge&color=96CDFB&logoColor=white&labelColor=302D41"/>
+   <img src="https://badges.pufler.dev/visits/dotzenith/TheSeptaTimes?style=for-the-badge&color=96CDFB&logoColor=white&labelColor=302D41"/>
    <br>
 </div>
 
