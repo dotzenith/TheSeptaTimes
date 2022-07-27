@@ -3,7 +3,7 @@ import requests
 from fuzzywuzzy import process
 from datetime import datetime
 from colorama import Fore, Style
-
+from typing import Any
 
 class TheSeptaTimes():
     def __init__(self):
@@ -42,7 +42,7 @@ class TheSeptaTimes():
             'Woodbourne', 'Wyndmoor', 'Wynnefield Avenue', 'Wynnewood', 'Yardley',
         ]
 
-    def json_to_py(self, link):
+    def json_to_py(self, link: str) -> Any:
         '''
         json_to_py(link) -> dictionary or list
 
@@ -55,7 +55,7 @@ class TheSeptaTimes():
 
         return py_object
 
-    def get_next_to_arrive(self, origin, destination, num=2):
+    def get_next_to_arrive(self, origin: str, destination: str, num: int = 2) -> Any:
         '''
         get_next_to_arrive(origin, destination, num) -> list of dictionaries
 
@@ -72,7 +72,7 @@ class TheSeptaTimes():
 
         return next_trains
 
-    def get_station_arrivals(self, station, num=5):
+    def get_station_arrivals(self, station: str, num: int = 5) -> Any:
         '''
         get_station_arrivals(station, num) -> list of dictionaries
 
@@ -90,7 +90,7 @@ class TheSeptaTimes():
 
         return trains
 
-    def get_train_schedule(self, train):
+    def get_train_schedule(self, train: str) -> Any:
         '''
         get_train_schedule(train) -> list of dictionaries
 
@@ -103,7 +103,7 @@ class TheSeptaTimes():
 
         return train_schedule
 
-    def search_station(self, guess_name):
+    def search_station(self, guess_name: str) -> str:
         '''
         search_station(guess_name) -> string
 
@@ -119,7 +119,7 @@ class TheSeptaTimes():
 
         return station
 
-    def get_stations_list(self):
+    def get_stations_list(self) -> list[str]:
         '''
         get_station_list() -> list
 
@@ -127,7 +127,7 @@ class TheSeptaTimes():
         '''
         return self.stations
 
-    def convert_station_time(self, time):
+    def convert_station_time(self, time: str) -> str:
         '''
         conver_staion_time(time) -> string
 
@@ -151,7 +151,7 @@ class TheSeptaTimes():
     the data the same way I did.
     '''
 
-    def parse_next_to_arrive(self, next_trains):
+    def parse_next_to_arrive(self, next_trains: Any) -> list[str]:
         '''
         parse_next_to_arrive(next_trains) -> list of strings
 
@@ -177,7 +177,7 @@ class TheSeptaTimes():
 
         return next_trains_list
 
-    def parse_station_arrivals(self, trains):
+    def parse_station_arrivals(self, trains: Any) -> list[str]:
         '''
         parse_station_arrivals(trains) -> list of strings
 
@@ -221,7 +221,7 @@ class TheSeptaTimes():
 
         return final_list
 
-    def parse_train_schedule(self, train_schedule):
+    def parse_train_schedule(self, train_schedule: Any) -> list[str]:
         '''
         parse_train_schedule(train_schedule) -> list of strings
 

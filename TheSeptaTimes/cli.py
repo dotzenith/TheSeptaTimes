@@ -1,8 +1,8 @@
 import typer
-import theseptatimes.SeptaTimes as SeptaTimes
+from TheSeptaTimes import TheSeptaTimes
 
 app = typer.Typer(add_completion=False)
-septa = SeptaTimes.TheSeptaTimes()
+septa = TheSeptaTimes()
 
 @app.command()
 def search(

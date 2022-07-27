@@ -41,7 +41,7 @@ pip3 install TheSeptaTimes
 git clone https://github.com/ZenithDS/TheSeptaTimes.git
 cd TheSeptaTimes
 poetry build
-pip3 install ./dist/theseptatimes-0.1.0.tar.gz
+pip3 install ./dist/theseptatimes-0.1.1.tar.gz
 ```
 
 ---
@@ -91,7 +91,7 @@ tst train 9374
 
 > print the next train going from a given train station to another
 ```python
-from TheSeptaTimes.SeptaTimes import TheSeptaTimes
+from TheSeptaTimes import TheSeptaTimes
 
 septa = TheSeptaTimes()
 
@@ -104,7 +104,7 @@ for train in readable_next_trains:
 
 > print the next 6 arrivals at a given train station
 ```python
-from TheSeptaTimes.SeptaTimes import TheSeptaTimes
+from TheSeptaTimes import TheSeptaTimes
 
 septa = TheSeptaTimes()
 
@@ -117,7 +117,7 @@ for train in readable_trains:
 
 > print any given train's schedule using the train number
 ```python
-from TheSeptaTimes.SeptaTimes import TheSeptaTimes
+from TheSeptaTimes import TheSeptaTimes
 
 septa = TheSeptaTimes()
 
@@ -134,7 +134,7 @@ for stop in readable_train_schedule:
 ---
 
 ### ❖ What's New? 
-0.1.0 - an overhaul to the cli
+0.1.1 - Fixed imports and added type hints
 
 ---
 
