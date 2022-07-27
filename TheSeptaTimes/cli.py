@@ -1,5 +1,5 @@
 import typer
-from TheSeptaTimes import TheSeptaTimes
+from theseptatimes import TheSeptaTimes
 
 app = typer.Typer(add_completion=False)
 septa = TheSeptaTimes()

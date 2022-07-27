@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "theseptatimes"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Python package to get data from the Septa API"
 authors = ["ZenithDS"]
 license = "MIT"
@@ -17,7 +17,7 @@ python-Levenshtein = "^0.12.2"
 typer = "^0.4.0"
 
 [tool.poetry.scripts]
-tst = "TheSeptaTimes.cli:main"
+tst = "theseptatimes.cli:main"
 
 [tool.poetry.dev-dependencies]
 

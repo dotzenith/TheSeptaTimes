@@ -41,7 +41,7 @@ pip3 install TheSeptaTimes
 git clone https://github.com/ZenithDS/TheSeptaTimes.git
 cd TheSeptaTimes
 poetry build
-pip3 install ./dist/theseptatimes-0.1.1.tar.gz
+pip3 install ./dist/theseptatimes-0.1.2.tar.gz
 ```
 
 ---
@@ -134,7 +134,7 @@ for stop in readable_train_schedule:
 ---
 
 ### ❖ What's New? 
-0.1.1 - Fixed imports and added type hints
+0.1.2 - Fixed imports and added type hints
 
 ---
 
