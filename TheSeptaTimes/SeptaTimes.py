@@ -7,7 +7,7 @@ from typing import Any
 
 class TheSeptaTimes():
     def __init__(self):
-        self.base_link = "https://www3.septa.org/hackathon/"
+        self.base_link = "https://www3.septa.org/"
         self.stations = [
             '9th St', '30th Street Station', '49th St', 'Airport Terminal A', 'Airport Terminal B',
             'Airport Terminal C-D', 'Airport Terminal E-F', 'Allegheny', 'Allen Lane', 'Ambler',

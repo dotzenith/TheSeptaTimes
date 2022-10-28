@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "theseptatimes"
-version = "0.1.2"
+version = "0.2.0"
 description = "A Python package to get data from the Septa API"
 authors = ["ZenithDS"]
 license = "MIT"
