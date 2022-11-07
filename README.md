@@ -38,10 +38,10 @@ pip3 install TheSeptaTimes
 - First, install [poetry](https://python-poetry.org/)
 
 ```sh
-git clone https://github.com/ZenithDS/TheSeptaTimes.git
+git clone https://github.com/dotzenith/TheSeptaTimes.git
 cd TheSeptaTimes
 poetry build
-pip3 install ./dist/theseptatimes-0.2.0.tar.gz
+pip3 install ./dist/theseptatimes-0.2.1.tar.gz
 ```
 
 ---
@@ -84,7 +84,7 @@ tst train 9374
 ---
 
 ### ❖ What's New? 
-0.2.0 - Updated API endpoint
+0.2.0 - Minor structural changes
 
 ---
 
