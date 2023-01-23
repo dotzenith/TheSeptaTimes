@@ -1,2 +1,2 @@
-from TheSeptaTimes.SeptaTimes import TheSeptaTimes
+from theseptatimes.SeptaTimes import TheSeptaTimes
 

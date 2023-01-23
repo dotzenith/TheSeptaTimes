@@ -41,7 +41,7 @@ pip3 install TheSeptaTimes
 git clone https://github.com/dotzenith/TheSeptaTimes.git
 cd TheSeptaTimes
 poetry build
-pip3 install ./dist/theseptatimes-0.2.2.tar.gz
+pip3 install ./dist/theseptatimes-0.2.4.tar.gz
 ```
 
 ---
@@ -84,7 +84,7 @@ tst train 9374
 ---
 
 ### ❖ What's New? 
-0.2.3 - Dependency and API updates
+0.2.4 - Naming changes
 
 ---
 
