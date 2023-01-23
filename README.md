@@ -84,7 +84,7 @@ tst train 9374
 ---
 
 ### ❖ What's New? 
-0.2.2 - Change author name
+0.2.3 - Dependency and API updates
 
 ---
 

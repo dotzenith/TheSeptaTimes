@@ -1,6 +1,6 @@
 import typer
 
-from theseptatimes import TheSeptaTimes
+from TheSeptaTimes.SeptaTimes import TheSeptaTimes
 
 app = typer.Typer(add_completion=False)
 septa = TheSeptaTimes()
@@ -15,12 +15,12 @@ def search(station: str):
 
 
 @app.command()
-def train(train_num: str):
+def train(train_id: str):
     """
     Track a given train using it's number
     """
 
-    train_schedule = septa.get_train_schedule(train_num)
+    train_schedule = septa.get_train_schedule(train_id)
     if "error" in train_schedule:
         print("No train found with that number")
     else:
@@ -31,7 +31,7 @@ def train(train_num: str):
 
 @app.command()
 def next(
-    origin: str, destination: str, num: str = typer.Argument(2, show_default=False)
+    origin: str, destination: str, num: int = typer.Argument(2, show_default=False)
 ):
     """
     Search for the next train going from an origin to a destination
@@ -45,7 +45,7 @@ def next(
 
 
 @app.command()
-def arrivals(station: str, num: str = typer.Argument(5, show_default=False)):
+def arrivals(station: str, num: int = typer.Argument(5, show_default=False)):
     """
     Find the next arrivals at a given train station
     """

@@ -4,12 +4,12 @@ from typing import Any
 
 import requests
 from colorama import Fore, Style
-from fuzzywuzzy import process
+from thefuzz import process
 
 
 class TheSeptaTimes:
     def __init__(self):
-        self.base_link = "https://www3.septa.org/"
+        self.base_link = "https://www3.septa.org/api/"
         self.stations = [
             "9th St",
             "30th Street Station",
@@ -192,7 +192,7 @@ class TheSeptaTimes:
                        train stations but results vary depending on the origin and destination)
         """
         next_to_arrive_link = (
-            f"{self.base_link}NextToArrive/{origin}/{destination}/{num}"
+            f"{self.base_link}NextToArrive/index.php?req1={origin}&req2={destination}&req3={num}"
         )
         next_trains = self.json_to_py(next_to_arrive_link)
 
@@ -209,14 +209,14 @@ class TheSeptaTimes:
                       (the default is set to 5, which is in line with the septa default.
                        the max is 200 according to septa)
         """
-        station_arrivals_link = f"{self.base_link}/Arrivals/{station}/{num}"
+        station_arrivals_link = f"{self.base_link}Arrivals/index.php?station={station}&results={num}"
         obj = self.json_to_py(station_arrivals_link)
         key_to_obj_dict = list(obj.keys())[0]
         trains = obj[key_to_obj_dict]
 
         return trains
 
-    def get_train_schedule(self, train: str) -> Any:
+    def get_train_schedule(self, train_id: str) -> Any:
         """
         get_train_schedule(train) -> list of dictionaries
 
@@ -224,7 +224,7 @@ class TheSeptaTimes:
 
         :param train -- the ID of any given train
         """
-        train_schedule_link = f"{self.base_link}/RRSchedules/{train}"
+        train_schedule_link = f"{self.base_link}RRSchedules/index.php?req1={train_id}"
         train_schedule = self.json_to_py(train_schedule_link)
 
         return train_schedule
